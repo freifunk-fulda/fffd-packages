@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# this script determines a list of all gateway servers configured on a node 
+# and tries to upload its fastd key to each of those servers by calling the
+# script upload_key_to_server
+ 
+path="$( dirname "$0" )"
+
+uci show fastd |grep remote|cut -d"=" -f2| sed -e 's:" .*::' -e 's:.* "::' | while read host; do
+  "$path/upload_key_to_server" "http://$host" &
+done
+
+exit 0
