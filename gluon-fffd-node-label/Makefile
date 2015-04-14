@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=gluon-config-mode-fffd-label
+PKG_NAME:=gluon-fffd-node-label
 PKG_VERSION:=1
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
 include $(GLUONDIR)/include/package.mk
 
-define Package/gluon-config-mode-fffd-label
+define Package/gluon-fffd-node-label
   SECTION:=gluon
   CATEGORY:=Gluon
   TITLE:=Set a custom label that will be distributed in the mesh.
@@ -24,8 +24,8 @@ endef
 define Build/Compile
 endef
 
-define Package/gluon-config-mode-fffd-label/install
+define Package/gluon-fffd-node-label/install
 	$(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,gluon-config-mode-fffd-label))
+$(eval $(call BuildPackage,gluon-fffd-node-label))

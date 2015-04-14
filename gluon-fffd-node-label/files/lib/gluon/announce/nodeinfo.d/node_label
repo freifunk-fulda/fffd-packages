@@ -1,6 +1,4 @@
 label = uci:get_first('gluon-node-info', 'label')
 if label ~= nil then
 	return label
-else
-	uci:get_first('system', 'system', 'hostname')
 end
