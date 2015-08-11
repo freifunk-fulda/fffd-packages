@@ -11,8 +11,8 @@ WGETC=$(which wget)
 MAC=$(sed 's/://g' /lib/gluon/core/sysconfig/primary_mac)
 KEY=$(/etc/init.d/fastd show_key mesh_vpn)
 
-uci show fastd | grep remote | cut -d"=" -f2 | sed -e 's/\"//g' | cut -d " " -f1 | while read host; do
-  $WGETC -O - -q http://${host}/upload_key?mac=${MAC}&key=${KEY}" &>/dev/null
+uci show fastd | grep remote | cut -d"=" -f2 | sed -e 's/\"//g' | cut -d " " -f1 | while read HOST; do
+  $WGETC -O - -q "http://${HOST}/upload_key?mac=${MAC}&key=${KEY}" &>/dev/null
 done
 
 exit 0
