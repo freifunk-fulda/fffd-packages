@@ -10,8 +10,8 @@ include $(INCLUDE_DIR)/package.mk
 define Package/gluon-fffd-wifi-aliases
   SECTION:=gluon
   CATEGORY:=Gluon
-  TITLE:=automatic key upload for fastd
-  DEPENDS:=+fastd
+  TITLE:=wifi aliases for client network
+  DEPENDS:=+gluon-mesh-batman-adv-core
 endef
 
 define Package/gluon-fffd-wifi-aliases/description
