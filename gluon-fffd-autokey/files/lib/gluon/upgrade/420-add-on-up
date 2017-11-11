@@ -1,12 +1,10 @@
 #!/usr/bin/lua
 
-local uci = require('luci.model.uci').cursor()
+local uci = require('simple-uci').cursor()
 
-uci:section('fastd', 'fastd', 'mesh_vpn',
-          {
-                  config = {'/lib/gluon/gluon-fffd-autokey/fastd.conf'}
-          }
-)
+uci:section('fastd', 'fastd', 'mesh_vpn', {
+    config = {'/lib/gluon/gluon-fffd-autokey/fastd.conf'}
+})
 
 uci:save('fastd')
 uci:commit('fastd')
